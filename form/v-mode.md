@@ -1,7 +1,7 @@
-表单
----
+# v-model的双向绑定
+----
 
-v-model
+用v-model把界面元素和model (script段data返回)中的值双向绑定起来了，界面上用修修改数据，model里会跟随改变，在script中修改了变量值，界面也会随之改变。
 
 ```vue
 <template>
@@ -21,7 +21,7 @@ export default {
 }
 </script>
 ```
-用v-model把界面元素和model (script段data返回)中的值双向绑定起来了，界面上用修修改数据，model里会跟随改变，在script中修改了变量值，界面也会随之改变。
+
 
 之前用{{}}包围起来的变量或用v-bind绑定的属性，都是单向绑定，model更新，界面跟随更新，界面上做了修改，model不会跟随改的。
 
