@@ -9,11 +9,6 @@
 * **Babel** 编译工具，可以把用JavaScript最新版语法编写的js代码转成老版的ES5格式，以便在老旧的浏览器内执行。也就是说，借助Babel，我们可以按照新版语法编写，Babel自动帮我们实现浏览器兼容。Babel支持两种转换方式：1、编译后发布ES5格式；2、在线转换。
 * **ESLint** Javscript代码检查工具，用于检查代码风格和语法，帮助我们写出质量较高的代码。可配置检查的范围。
 * **VUE**
-  * page 页面，一般的vue项目是单页面应用，只有一个html文件（默认是src/public/index.html)，也可创建多页面应用。
-  * view 视图，对应一个.vue文件，一般放在src/views目录下。一个vue项目内一般有多个视图。
-  * component 组件，一个组件对应一个.vue文件，一般在src/components目录下，组件被视图引用，成为视图中的一部分。
-  * route 路由，视图之间导航被称作路由，vue的路由由插件vue-router实现，路由并不是vue项目的必需组成部分，但大部分项目使用vue-router来管理路由。在vue-router中，可以对路由的导航进行监听并控制。
-  * 
 * **CSS Pre-Processor** 网页中使用的CSS有些不利于工程化的弊端，例如无法定义全局变量（例如：控制一个全局统一的颜色、边距），有人创造了CSS的预处理器来解决这个问题，就是用另外一种类似CSS的语言编写，然后由预处理器编译成CSS并加入到项目中。比较常见的有：Sass/SCSS/Less/Stylus等
 * **TypeScript** 微软发明的，在Javascript上的扩展语言，可编译成Javascript。
 
