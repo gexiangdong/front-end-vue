@@ -25,11 +25,11 @@ export default {
 
 之前用{{}}包围起来的变量或用v-bind绑定的属性，都是单向绑定，model更新，界面跟随更新，界面上做了修改，model不会跟随改的。
 
-直接写 `v-model="变量名"` 即可，不需要 ~~v-model:value="变量名"~~ 。所有的双向绑定都用v-model，属性不是必须为value。
+直接写 `v-model="变量名"` 即可，不需要 ~~v-model:value="变量名"~~ 。所有的双向绑定都用v-model，不论之前html标签的属性名是否是value。
 
 即使在textarea上也要用v-model，例如
 
-```
+```vue
 <!-- 正确的写法，把textarea的value和data中的remark绑定起来了  -->
 <textarea v-model="remark"></textarea>
 
