@@ -7,8 +7,8 @@
     <div v-for="(item,index) in array" v-bind:key="index">
       {{item}}
     </div>
-    <button v-on:click="addItem1">add 1</button>
-    <button v-on:click="addItem2">add 2</button>
+    <button v-on:click="addItem1">add 1 (not work)</button>
+    <button v-on:click="addItem2">add 2 (this one works fine)</button>
   </div>
 </template>
 
@@ -55,15 +55,12 @@ export default {
   },
   methods: {
     addItem1: function(){
+      // 这种操作数据，增加一个元素的方法不行， vue没法监控到，
       this.array[this.arry.length] = 'Hello'
     },
     addItem2: function(){
-      var ary = []
-      for(var i=0; i<this.array.length; i++){
-        ary[i] = this.array[i]
-      }
-      ary[ary.length] = 'Hi'
-      this.array = ary
+      // 用push给数组增加新元素是可以的
+      this.array.push("Hi")
     }
   }
 }

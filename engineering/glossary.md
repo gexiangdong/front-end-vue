@@ -1,6 +1,5 @@
 # 相关的工具、技术和术语
-----
-
+====
 
 * **node.js** node.js是javascript的一个运行环境，是一个服务器端的javascript解释器，有些地方简称node，也有把“.”省略掉称为nodejs。
 * **NPM** npm是node.js的包管理工具，和node.js一起发行。
