@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import AForm from './views/AForm.vue'
+import LifeCycle from './views/LifeCycle.vue'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/aform',
       name: 'aform',
       component: AForm
+    },
+    {
+      path: '/lifecycle',
+      name: 'lifecycle',
+      component: LifeCycle
     }
   ]
 })

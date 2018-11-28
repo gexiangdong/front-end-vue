@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <h1>
+      首页<p class="page-desc">基本保留了vue自动生成的首页，一个对自定义组件的调用页面。</p>
+    </h1>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>

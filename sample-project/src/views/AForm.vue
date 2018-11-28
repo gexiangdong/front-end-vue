@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h1>表单的例子</h1>
+    <h1>
+      表单的例子
+      <p class="page-desc">页面底部有背景色的区域显示了页面Data()中的数据，因为Data()中数据和表单双向绑定，所以表单中修改会在底部实时更新。</p>
+    </h1>
     <form>
       <div>姓名：</div>
       <div><input type="text" autofocus="autofocus" v-model="name" /></div>
@@ -36,7 +39,7 @@
       <div><input type="checkbox" id="iagreewithite" v-model="agree"><label for="iagreewithite">我同意注册协议……</label></div>
 
       <div></div>
-      <div><input type="submit" value="submit button" /> <button v-on:click="submitForm">提交</button></div>
+      <div><button v-on:click="submitForm">提交</button></div>
     </form>
 
     <div class="display">
