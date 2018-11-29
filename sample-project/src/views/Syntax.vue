@@ -3,6 +3,16 @@
     <h1>Template语法</h1>
 
     <div class="item">
+      <h2>v-html</h2>
+      <p>
+        {{ message }}
+      </p>
+      <p>
+        <span v-html="message">把要显示的内容作为属性v-html的值，就显示HTML了，这里会被取代</span>
+      </p>
+    </div>
+
+    <div class="item">
       <h2>v-if</h2>
       <button v-on:click="seeme = !seeme">切换显示</button>
       seeme={{seeme}}
@@ -24,7 +34,8 @@ export default {
   data() {
     return {
       seeme: true,
-      displayit: true
+      displayit: true,
+      message: 'hello <b>world</b>'
     }
   }
 }

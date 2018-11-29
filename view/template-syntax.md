@@ -15,9 +15,10 @@ Template中和HTML类似，有以下要求
 <span>{{message}}</span>
 ```
 
-不对变量encode，里面的html直接显示
+不对变量encode，里面的html直接显示，需要把要显示的值赋给属性v-html，这个元素里面的内容会被替换成v-html的值。
+
 ```
-<span v-html>{{htmlMessage}}</span>
+<span v-html="htmlMessage"></span>
 ```
 
 
