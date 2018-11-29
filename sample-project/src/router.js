@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import AForm from './views/AForm.vue'
 import LifeCycle from './views/LifeCycle.vue'
+import Syntax from './views/Syntax.vue'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/lifecycle',
       name: 'lifecycle',
       component: LifeCycle
+    },
+    {
+      path: '/syntax',
+      name: 'syntax',
+      component: Syntax
     }
   ]
 })

@@ -19,9 +19,6 @@
 * [View](view/README.md)
   * [.vue文件的结构](view/vuefile.md)
   * [template的语法](view/template-syntax.md)
-     * 绑定值
-     * 条件
-     * 列表（循环）  
   * [生命周期](view/lifecycle.md)
   * [事件](view/events.md)
   * [使用ref属性获取元素](view/refs.md)

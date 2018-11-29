@@ -1,5 +1,5 @@
 # Template中的语法
-----
+====
 
 Template中和HTML类似，有以下要求
 
@@ -61,6 +61,22 @@ export default {
 
 ## v-if
 ```
+<template>
+  <div>
+    <button v-on:click="seeme = !seeme">切换显示</button>
+    <div class="panel" v-if="seeme">{{seeme}}</div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      seeme: true
+    }
+  }
+}
+</script>
 
 ```
 ## v-show
@@ -77,4 +93,23 @@ v-show只是改变元素的style中的display属性，不论v-show的值为真�
 ```HTML
 <a href="javascript:;" v-on:click="crateNewOne()">新增</a>
 <a href="javascript:;" v-on:click="crateNewOneWithParams('blank', 123, varInData)">新增</a>
+```
+事件调用的方法需要写在script部分的methods内。
+
+```vue
+<script>
+export default {
+  data() {
+    return {
+    }
+  },
+  methods: {
+    //事件调用的方法写这里
+    createnewOne: function(){
+    },
+    crateNewOneWithParams: function(p1, p2, p3){
+    }
+  }
+}
+</script>
 ```
