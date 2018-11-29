@@ -5,9 +5,11 @@
     <div class="item">
       <h2>v-html</h2>
       <p>
+        用两个大括号包围起来的变量，在显示时，会自动html encoding，例如：
         {{ message }}
       </p>
       <p>
+        如果不希望自动html encoding，需要把变量赋值给属性v-html，例如：
         <span v-html="message">把要显示的内容作为属性v-html的值，就显示HTML了，这里会被取代</span>
       </p>
     </div>
