@@ -15,6 +15,12 @@ Template中和HTML类似，有以下要求
 <span>{{message}}</span>
 ```
 
+不对变量encode，里面的html直接显示
+```
+<span v-html>{{htmlMessage}}</span>
+```
+
+
 ## 标签的属性
 
 如果某个html标签的属性需要跟随model里的值变化而变，则需要下面第2、3行的写法
