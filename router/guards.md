@@ -59,5 +59,28 @@ TODO: 图和例子(混合入view里面的事件顺序）
 
 ## History
 
-hash模式与history模式
+hash模式与history模式，这两种模式功能没什么区别，只有URL的表现形式有差异。
 
+hash模式的url:
+
+```
+http://localhost:8080/#/foo
+```
+
+history模式:
+
+```
+http://localhost:8080/foo
+```
+
+hash模式是靠改变页面中的hash来实现的。
+
+history模式的url看上去更'正常'些，这也是有人喜欢这种模式的原因，但这种模式部署到生产环境上的时候，需要对web服务器进行下设置，把对应目录下的所有请求都重定向到index.html上去。
+
+例如NGINX下要做类似这样的配置：
+
+```conf
+location / {
+  try_files $uri $uri/ /index.html;
+}
+```

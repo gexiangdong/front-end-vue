@@ -30,7 +30,7 @@
   * [导航](router/navigate.md)
   * [监听](router/guards.md)
 * [AJAX](ajax/README.md)
-  * [使用vue-resource](vue-resource.md)
+  * [使用vue-resource](ajax/vue-resource.md)
   * [全局配置和监听](ajax/interceptor.md)
 * [自定义组件](component/README.md)
   * [创建自定义组件并使用它](component/create.md)

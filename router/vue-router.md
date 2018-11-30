@@ -1,6 +1,5 @@
 # vue-router
-----
-
+====
 
 ##安装
 
@@ -17,13 +16,12 @@ npm install vue-router --save
 import router from './router'
 
 new Vue({
-  router,         //修改new Vue的参数，增加这行
+  router,         //告诉Vue使用router
   render: h => h(App)
 }).$mount('#app')
 
 ```
 
-TODO
 
 ### 登记路由
 新建了页面后，需要在路由文件(src/router.js)登记这个页面，以便能够路由导航，例如新增了Foo.vue，则登记做如下修改
@@ -46,7 +44,7 @@ import Foo from './views/Foo.vue'    //这行是新增的
 总共添加了2处： 
 
 * 顶部import了要添加的view
-* 在routers的数组里增加一个新的路由
+* 在routers的数组里增加一个新的路由，给路由起一个名字并登记一个url地址。以后导航时可以用这个名字或地址
 
 ### 路由的懒加载lazy-load
 

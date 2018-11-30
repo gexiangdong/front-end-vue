@@ -25,11 +25,30 @@ this.$http.get('url', param)
 
 ## 语法
 
-```
-this.$http.get()
-this.$http.post()
-this.$http.get
-this.$http.get
-this.$http.get
+如果后台是RESTful的API，使用vue-rousources对应起就显得很顺畅了，API的Action就对应这里的函数名，然后最多传三个参数：url、body（可选，不是每个方法都支持）、配置信息（例如header等，可选）。
 
+```
+this.$http.get(url, [param])
+this.$http.post(url, [body], [param])
+this.$http.put(url, [body], [param])
+this.$http.delete(url, [param])
+
+this.$http.jsonp(url, [param])
+this.$http.head(url, [param])
+this.$http.patch(url, [body], [param])
+
+```
+这个方法返回的是一个Promise，可以用then来处理响应。
+
+```
+this.$http.get(url).then(successCallback, failedCallback)
+
+// 或者直接把方法写这里
+
+this.$http.get(url).then(response => {
+    console.log('成功啦，收到的数据是：', response.body)
+  }, response => {
+    console.log('失败了，服务器状态码:' , response.status)
+  }
+}
 ```
