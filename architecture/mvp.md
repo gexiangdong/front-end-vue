@@ -1,5 +1,5 @@
 # MVP
-====
+
 
 
 MVP (Model-View-Presenter)，是对MVC模式进行的改进，最初由Taligent公司提出的概念。

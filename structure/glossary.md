@@ -1,5 +1,5 @@
 # VUE中的术语和词汇
-====
+
 
 ### page 页面
 一般的vue项目是单页面应用，只有一个html文件（默认是src/public/index.html)，也可创建多页面应用。

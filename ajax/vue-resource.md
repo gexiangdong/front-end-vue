@@ -1,5 +1,5 @@
 vue-resource
-====
+
 
 vue-resource是访问后台API的ajax框架，和RESTful API契合的比较好。
 

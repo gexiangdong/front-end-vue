@@ -1,5 +1,5 @@
 # 页面导航
-====
+
 
 
 使用vue-router后，用原来的window.location='/url'的方式和普通链接方式仍旧都可做导航。但更丰富了些vue-router的方式。

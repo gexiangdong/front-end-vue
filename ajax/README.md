@@ -1,5 +1,5 @@
 # AJAX
-====
+
 
 可以和以前在javascript中使用`XMLHttpRequest`来调用访问后台接口。
 

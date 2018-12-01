@@ -1,5 +1,5 @@
 # .vue文件的结构
-====
+
 
 vue create创建的初始项目中包含Home.view和About.vue两个视图，在src/views目录下，我们一般添加页面也放在这个目录下。
 
