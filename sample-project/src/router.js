@@ -5,6 +5,7 @@ import AForm from './views/AForm.vue'
 import LifeCycle from './views/LifeCycle.vue'
 import Syntax from './views/Syntax.vue'
 import WatchData from './views/WatchData.vue'
+import UseComponent from './views/UseComponent.vue'
 
 Vue.use(Router)
 
@@ -42,6 +43,11 @@ export default new Router({
       path: '/watchdata',
       name: 'watchdata',
       component: WatchData
+    },
+    {
+      path: '/usecomponent',
+      name: 'usecomponent',
+      component: UseComponent
     }
   ]
 })

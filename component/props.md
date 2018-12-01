@@ -28,7 +28,7 @@ export default {
 }
 ```
 
-props也可简写成 `props: [data, title]`，这表示接收2个属性，都是可选的，类型不指定。 类型和必需的设置都是为了帮助我们避免错误，缺少属性或错误的类型时，vue会给出提示。
+props也可简写成 `props: ['data', 'title']`，这表示接收2个属性，都是可选的，类型不指定。 类型和必需的设置都是为了帮助我们避免错误，缺少属性或错误的类型时，vue会给出提示。
 
 
 使用的时候给prop赋值：
@@ -38,6 +38,3 @@ props也可简写成 `props: [data, title]`，这表示接收2个属性，都是
 <MyComponent v-bind:data="data" title="固定字符串" />
 ```
 
-## v-model 双向绑定
-
-可以使用v-model

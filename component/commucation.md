@@ -9,6 +9,46 @@
 * 组件 -> 父级， 自定义事件传递消息；父级监听事件接收
 * 双向绑定数据 v-model 
 
+## v-model
+
+要使用v-model，组件需要做到2点：
+
+* 组件有一个prop的名字是value 
+* value对应的值改变时，通过触发input事件向父级传递新值
+
+例如：
+
+### 组件
+
+例如下面的组件，定义了2个属性：message和value，调用方可以使用v-model绑定数据到value属性上。 
+
+```
+<template>
+  <div>
+    <p>{{message}}</p>
+    <button v-on:click="add(-1)"> - </button> {{value}} <button v-on:click="add(+1)"> + </button>
+  </div>
+</template>
+
+<script>
+export default {
+  props: ['value', 'message'],
+  methods: {
+    add(step){
+      this.value += step;
+      this.$emit('input', this.value)
+    }
+  }
+}
+</script>
+
+```
+
+### 调用方
+
+```
+<MyComponent message="Hello" v-model="num"/>
+```
 
 ## 在父级调用组件的方法【不推荐】
 

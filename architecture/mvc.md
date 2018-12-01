@@ -1,5 +1,5 @@
 # MVC
-----
+====
 
 
 MVC模式最早由Trygve Reenskaug在1978年提出，是施乐帕罗奥多研究中心（Xerox PARC）在20世纪80年代为程序语言Smalltalk发明的一种软件架构。MVC的三个字母含义如下：

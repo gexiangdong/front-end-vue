@@ -7,6 +7,7 @@
         <li><router-link to="/lifecycle">生命周期</router-link></li>
         <li><router-link to="/syntax">Template语法</router-link></li>
         <li><router-link to="/watchdata">数据改变的监听</router-link></li>
+        <li><router-link to="/usecomponent">自定义组件</router-link></li>
       </ul>
     </div>
     <div id="main">

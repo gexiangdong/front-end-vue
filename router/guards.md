@@ -1,5 +1,5 @@
 # 监听
-----
+====
 
 
 ## 全局事件/钩子 (导航守卫 Navigation Gurads)
@@ -41,20 +41,8 @@ router.beforeEach((to, from, next) => {
   * beforeRouteLeave
 
 ### 事件执行顺序
-TODO: 图和例子(混合入view里面的事件顺序）
 
-1. 导航被触发。
-1. 在失活的组件里调用离开守卫。
-1. 调用全局的 beforeEach 守卫。
-1. 在重用的组件里调用 beforeRouteUpdate 守卫 (2.2+)。
-1. 在路由配置里调用 beforeEnter。
-1. 解析异步路由组件。
-1. 在被激活的组件里调用 beforeRouteEnter。
-1. 调用全局的 beforeResolve 守卫 (2.5+)。
-1. 导航被确认。
-1. 调用全局的 afterEach 钩子。
-1. 触发 DOM 更新。
-1. 用创建好的实例调用 beforeRouteEnter 守卫中传给 next 的回调函数。
+![vue-router中各个事件执行时机图](../images/router-hooks.png)
 
 
 ## History
