@@ -25,9 +25,12 @@ v-on: 可简写成 @，例如： `v-on:click="buttonClicked"`可简写成`@click
 这里写javascript，遵守如下结构：
 
 ```vue
+import MyComponent from '@/components/MyComponent.vue' //使用的自定义组件，js等需要在这里import进来；@表示src目录；
+
 <script>
 export default {
   name: '视图名称', //可省略，建议每个view定义一个不同的名称，方便找错
+  components: {MyComponent}, //此view中使用的组件；如果不使用组件，可省略慈航
   data() {
     return {
       // 在这里定义数据结构，有初始值的赋初始值，没有的写null，把结构写完整
@@ -57,6 +60,19 @@ export default {
 </script>
 
 ```
+
+在上面的代码中有种简写方式
+
+```
+components: {MyComponent}
+```
+是
+
+```
+components: {MyComponent: MyComponent}
+```
+的简写，两者效果相同。在属性和值的名称完全一致时，可以用这种简写，这种简写在VUE项目中广泛存在。
+
 
 ## style
 

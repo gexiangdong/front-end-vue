@@ -1,5 +1,5 @@
 # 使用Mode对开发环境与生产环境的不同配置
-----
+====
 
 在开发环境中会有些变量需要设置成和生产环境不同，例如后台接口的地址，某些图片等资源文件的网址前缀等。VUE把这种不同的环境叫做 Mode，它默认有3个Mode： development, production, test。分别对应开发环境、生产环境和测试环境。我们用`npm run serve`运行起来的环境就是mode=development；用`npm run build`编译出来的html/js/css被访问时mode=production。
 
