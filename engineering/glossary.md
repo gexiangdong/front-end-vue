@@ -19,27 +19,4 @@
 * **Angular** Google维护的开源前端框架，第2版前称为AngularJs，VUE的竞品
 * **Yarn** 另外一种包管理工具，NPM的竞品。类似竞品还有bower。
 * **Bootstrap** 一套CSS/JS框架，兼容多种终端设备，可作为单独框架独立使用，也可加入到VUE中，也有人做了bootstrap-vue的插件。
-* 
 
-
-##TODO
-
-作者：山茶树和葡萄树
-链接：https://www.zhihu.com/question/37694275/answer/113609266
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
-- node , 是javascript语言的环境和平台，
-- npm , yarn , bower 是一类，包管理，
-- webpack , browserify , rollup 是一类，javascript模块打包方案(方案+工具+插件)，
-- babel, TypeScript, 算是一类，ES编译器，
-- requirejs , seajs 是一类, 以前基于 commonjs，amd，cmd，umd 之类的模块类包加载方案的框架，
-- grunt , gulp , 前端工具，结合插件，合并、压缩、编译 sass/less，browser 自动载入资源，
-- react , angular , vue , backbone 是一类，mvc , mvvm , mvp 之类的前端框架，
-- jquery , zepto , prototype 是一类，前端 DOM , BOM 类库 ，
-- ext , yui , kissy , dojo 是一类，前端应用组件，以前大而全的解决方案，
-- rxjs , lodash , underscore , ramda , immutable ,  moment , mathjs 是一类，JavaScript Utility Libraries，
-- JSLint , JSHint , JSCS , ESLint , 是一类，代码检验，
-- Ionic , NativeScript , React Native , Flutter , PhoneGap/Cordova , Xamarin 算是一类，Cross-Platform 开发工具，
-- Less , Sa|css , Stylus , PostCSS , 是一类，CSS 程式化方案，
-- Karma , Protractor , 测试
