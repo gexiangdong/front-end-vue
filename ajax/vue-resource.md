@@ -1,6 +1,7 @@
 vue-resource
-----
-vue-resource是访问
+====
+
+vue-resource是访问后台API的ajax框架，和RESTful API契合的比较好。
 
 ## 安装
 
@@ -52,3 +53,7 @@ this.$http.get(url).then(response => {
   }
 }
 ```
+
+> `response => {}`这是javascript的lamda表达式定义函数的写法，定义一个匿名函数，函数体在大括号内写，参数是 => 前面的部分，如果多个参数用逗号分隔，两端加括号。 使用lambda表达式有个好处是函数体内可用this。如果用function定义函数需要在函数外`let self = this`然后在函数体内用`self`替代`this`来调用外部的方法变量。
+>
+> lambda表达式和Promise是ES6开始引进的特色，表现形式上个和ES5的语法有些差些，如果对这些不太了解，建议你找时间补补。
