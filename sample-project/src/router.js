@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import AForm from './views/AForm.vue'
 import LifeCycle from './views/LifeCycle.vue'
 import Syntax from './views/Syntax.vue'
+import WatchData from './views/WatchData.vue'
 
 Vue.use(Router)
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/syntax',
       name: 'syntax',
       component: Syntax
+    },
+    {
+      path: '/watchdata',
+      name: 'watchdata',
+      component: WatchData
     }
   ]
 })

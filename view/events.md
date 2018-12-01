@@ -1,5 +1,5 @@
 # 事件
-----
+====
 
 
 在 template 里捕获事件需要 `v-on:eventname="userfunction"`来处理。

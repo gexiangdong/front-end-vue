@@ -1,5 +1,5 @@
 # 生命周期
-----
+====
 
 ![View的生命周期钩子](../images/view-lifecycle.png)
 

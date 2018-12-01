@@ -19,6 +19,7 @@
 * [View](view/README.md)
   * [.vue文件的结构](view/vuefile.md)
   * [template的语法](view/template-syntax.md)
+  * [对数据改变的监听](view/watch-data.md)
   * [生命周期](view/lifecycle.md)
   * [事件](view/events.md)
   * [使用ref属性获取元素](view/refs.md)

@@ -22,42 +22,55 @@ v-on: 可简写成 @，例如： `v-on:click="buttonClicked"`可简写成`@click
 
 ## script
 
+这里写javascript，遵守如下结构：
 
-## style
-
-
-
-## 数据的双向绑定
-
-### bug
 ```vue
-<template>
-  <div>
-    <div v-for="item in array">
-      {{item}}
-    </div>
-    <button v-on:click="addItem1">add 1</button>
-    <button v-on:click="addItem2">add 2</button>
-  </div>
-</template>
-
 <script>
 export default {
+  name: '视图名称', //可省略，建议每个view定义一个不同的名称，方便找错
   data() {
     return {
-      array: ['a', 'b', 'c']
+      // 在这里定义数据结构，有初始值的赋初始值，没有的写null，把结构写完整
     }
   },
+  // view生命周期内的钩子事件在这里定义；具体有哪些钩子函数请参考生命周期章节
+  created: function(){
+    console.log('created')
+  },
+  beforeDestroy: function(){
+    console.log('beforeDestroy')
+  }
   methods: {
+    //此view内的方法，全部使用this.functionName调用
+    //只要能用this的地方都可以调用
+    //可以处理数据、访问后台、返回值
+    //在模版里也可以调用这里的方法
     addItem1: function(){
-      this.array[this.arry.length] = 'Hello'
+      
     },
     addItem2: function(){
-      this.array.push('hi')
-      this.array = ary
+      //也可以有返回值的
+      return 1
     }
   }
 }
 </script>
+
 ```
-上述程序addItem1不会正常添加；addItem2则可以
+
+## style
+
+这里就是CSS，如果你喜欢用LESS、SASS、SCSSS等预编译CSS技术，先要安装对应的插件，然后在这里可以使用，需要增加lang="less"来告诉编译器用的是哪种语言。
+
+scoped属性，有这个属性标志着这里写的css仅仅对这个vue文件内的模版生效。不会成为全局的css。我建议每个View内的css都是局部生效的，仅对view本身有效。需要全局生效的放到：
+ 
+* App.vue内
+* index.html 或在index.html引用外部css文件
+
+如果每个view内有全局css会对整个项目的管理维护是一种伤害。
+
+## MVVM架构
+
+在一个扩展名是.vue的视图内，template部分是MVVM中的第一个V(View)，script部分中的data()则对应MVVM中的M(Model)，其余部分的script则对应VM(ViewModel)。如果要给style分布也归类，可放到View部分。
+
+。
