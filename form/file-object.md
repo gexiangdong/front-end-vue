@@ -69,7 +69,7 @@ input的美化和图片的预览在[本书附带的例子项目](../sample-proje
 
 事件处理的方法：
 
-```
+```vue
   methods:{
     fileDroped: function(event){
       this.fileList = event.dataTransfer.files
@@ -99,11 +99,11 @@ input的美化和图片的预览在[本书附带的例子项目](../sample-proje
 
 完整详细的例子请看[本书附带的例子项目](../sample-project)里有简单的示例。
 
-## 上传FileObject
+## 上传File Object
 
 得到file后，可以用FormData生成Post Body数据，然后通过AJAX上传。
 
-```
+```vue
   let formData = new FormData()
   //把每个文件都增加进入FormData
   for (var i=0; i < this.fileList.length; i++){
@@ -120,5 +120,5 @@ input的美化和图片的预览在[本书附带的例子项目](../sample-proje
   }, response => {
     console.log("出错了", response)
   })
-}
+
 ```

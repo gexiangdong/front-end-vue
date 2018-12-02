@@ -1,11 +1,11 @@
 # 文件上传
 
 
-文件上传在[表单章节的上传FileObject](../form/file-object.md#上传FileObject)中已经讲到。
+文件上传在[表单章节的上传File Object](../form/file-object.md#上传File-Object)中已经讲到。
 
 vue-resource还可以增加进度监视器在客户端显示上传进度
 
-```
+```vue
   var uploadProgress = function(processEvent){
     //上传进度更新时会调用这个函数
     //lengthComputable是boolean型，true表示能够计算上传的大小
@@ -21,6 +21,6 @@ vue-resource还可以增加进度监视器在客户端显示上传进度
   }, response => {
     console.log("error", response)
   })
-}
+
 
 ```
