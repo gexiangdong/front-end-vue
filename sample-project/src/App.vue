@@ -20,7 +20,7 @@
 <style>
   html, body{height: 100%; padding: 0; margin: 0;}
   #app {display: flex; height: 100%;}
-  #nav { width:80px; border-right: 1px solid #CCC;  padding: 30px;}
+  #nav { width:120px; border-right: 1px solid #CCC;  padding: 20px;}
   #main{flex-grow: 1; padding-left: 20px;}
   #nav a {font-weight: bold; color: #2c3e50;}
   #nav ul{margin: 0; padding: 0;}

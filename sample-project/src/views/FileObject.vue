@@ -90,15 +90,13 @@ export default {
         formData.append("file", f)
       }
       //增加其它内容
-      let self = this
-      var uploadProgress = function(processEvent){
-        console.log(self, processEvent.lengthComputable, processEvent.loaded, processEvent.total)
-      }
-
       formData.append("fileType", "myimages")
+      
       this.$http.post('/api/files/exam', formData, {
         headers: {'Content-Type': 'multipart/form-data'},
-        uploadProgress: uploadProgress
+        uploadProgress: (processEvent => {
+          console.log(processEvent.lengthComputable, processEvent.loaded, processEvent.total)
+        })
       }).then(response=>{
         console.log("uploaded", response)
       }, response => {
