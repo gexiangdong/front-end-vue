@@ -48,9 +48,9 @@ stompClient.connect({'Authorization': 'Bearer ' + this.token}, function(){
 
 #### 发送消息
 
-```
+```javascript
 //发送消息有3个参数： 1、消息发送到的地址url；2、消息头信息，JSON格式； 3、消息正文，字符串，如果是json格式，需要自行转换
 stompClient.send(destination, {}, body);
 ```
 
-stompjs详细用法参考 http://jmesnil.net/stomp-websocket/doc/
+stompjs详细用法参考 [http://jmesnil.net/stomp-websocket/doc/](http://jmesnil.net/stomp-websocket/doc/)
