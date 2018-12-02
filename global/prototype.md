@@ -1,5 +1,6 @@
 # 使用VUE.prototype定义全局变量和函数
 
+> 通过prototype属性，可以获取到某个类的原型对象，然后对原型进行修改和扩充。 prototype是javascirpt灵活的地方，也是另初学者困惑的地方。
 
 
 有时候我们需要的全局变量较少，也不需要复杂操作，使用vuex就有些杀鸡用牛刀的感觉了。
@@ -14,7 +15,7 @@ Vue.prototype.token = 'xxxx-xxx-xxxxx-xxxx-xxxxxxx'
 以后在所有的view里都可以用this.token访问这个变量了。但在view中没法对这个全局变量赋值，你会发现this.token赋的值仅仅在当前view中有效，离开这个view就失效了。为解决这个问题，可以增加一个全局的函数。
 
 
-## 方法
+## 全局函数
 
 全局函数定义和全局变量类似，在main.js里增加
 
