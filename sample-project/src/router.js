@@ -6,6 +6,7 @@ import LifeCycle from './views/LifeCycle.vue'
 import Syntax from './views/Syntax.vue'
 import WatchData from './views/WatchData.vue'
 import UseComponent from './views/UseComponent.vue'
+import FileObject from './views/FileObject.vue'
 
 Vue.use(Router)
 
@@ -48,6 +49,11 @@ export default new Router({
       path: '/usecomponent',
       name: 'usecomponent',
       component: UseComponent
+    },
+    {
+      path: '/fileobject',
+      name: 'fileobject',
+      component: FileObject
     }
   ]
 })

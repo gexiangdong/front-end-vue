@@ -6,8 +6,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>sample-project</title>
+    <script>
+      function disableDrop(event){
+        event.preventDefault();
+      }
+      window.onload = function(){
+        document.body.addEventListener("dragenter", disableDrop, false);
+        document.body.addEventListener("dragover", disableDrop, false);
+        document.body.addEventListener("drop", disableDrop, false);
+      }
+    </script>
   </head>
-  <body>
+  <body> 
     <noscript>
       <strong>We're sorry but sample-project doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
