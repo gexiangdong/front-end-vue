@@ -29,7 +29,7 @@
 
 ### 用到的代码
 
-书中所有的代码，整理出来一个演示项目，在[sample-project目录下](./sample-project)。
+书中所有的代码，整理出来一个演示项目，在[https://github.com/gexiangdong/front-end-vue/tree/master/sample-project](https://github.com/gexiangdong/front-end-vue/tree/master/sample-project)。
 
 ### 版本
 
@@ -37,10 +37,10 @@
 
 | 项目 | 版本 |
 |:------------:|:---------:|
-NodeJS         | 10.12.0 |
-npm            | 6.4.1 |
-VUE            | 3.1.3 |
-vue-router     | 3.0.1 |
-vue-resource   | 1.5.1 |
-sockjs         | 1.3.0 |
-stompjs        | 2.3.3 |
+| NodeJS       | 10.12.0 |
+| npm          | 6.4.1 |
+| VUE          | 3.1.3 |
+| vue-router   | 3.0.1 |
+| vue-resource | 1.5.1 |
+| sockjs       | 1.3.0 |
+| stompjs      | 2.3.3 |
