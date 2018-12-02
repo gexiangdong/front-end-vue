@@ -99,7 +99,7 @@ input的美化和图片的预览在[本书附带的例子项目](../sample-proje
 
 完整详细的例子请看[本书附带的例子项目](../sample-project)里有简单的示例。
 
-## 上传File
+## 上传FileObject
 
 得到file后，可以用FormData生成Post Body数据，然后通过AJAX上传。
 
