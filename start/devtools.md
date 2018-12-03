@@ -35,7 +35,15 @@ npm install npm@latest -g
 ``` 
 
 ###windows
-TODO:
+
+下载nodejs并安装: [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+
+安装完后到命令行(Windows PowerShell)下查看是否正确安装
+
+```
+node -v
+npm -v
+```
 
 ## 安装VUE 3
 安装好npm后，需要安装vue-cli，我们这里使用的是VUE 3，如果之前已经安装了VUE 2.x或1.x，可以先卸载掉，用如下命令卸载：
@@ -56,6 +64,19 @@ vue -V
 ```
 注意和node/npm查看版本的参数有区别，这里是大写的V。
 
+
+## 使用国内镜像服务器
+
+npm使用过程中，需要下载一些第三方包、插件等，这些服务器在国外，访问起来有时速度很慢，可以使用淘宝镜像。
+
+在自己的home目录下创建一个 .npmrc 文件（注意以"."开始），内容如下：
+
+```
+sass_binary_site = https://npm.taobao.org/mirrors/node-sass/
+phantomjs_cdnurl = https://npm.taobao.org/mirrors/phantomjs/
+registry = https://registry.npm.taobao.org
+```
+如果是团队开发，也可搭建自己的私有镜像服务器，可使用nexus搭建。nexus可以做maven私服、npm私服，前后端都囊括了。
 
 ## 开发环境和生产运行环境
 
