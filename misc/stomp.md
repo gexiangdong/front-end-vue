@@ -1,9 +1,7 @@
 # websocket stomp
 
 
-
-使用websocket
-
+项目中有需要双向实时通讯的部分，websocket是不二之选。websocket从名字就可以看出来比较底层，stomp js是构建在websocket之上的，类似HTTP协议在TCP上层一样，与直接使用websocket相比，使用STOMP JS会大大简化的工作。
 
 ## 安装模块
 ```bash
@@ -36,7 +34,11 @@ stompClient.connect({'Authorization': 'Bearer ' + this.token}, function(){
 	console.log("connected.")
 	//订阅消息；单独一个用户的url前有/user；发送给全部用户没有/user
 	stompClient.subscribe("/user/topic/somemessage", function(message){
-		//收到消息的回调函数; message.body是消息正文，字符串类型；如果服务器传递回来的是JSON格式，需要自行转换 var jsonBody = JSON.parse(message.body)
+		//收到消息的回调函数; 
+		//message.body是消息正文，字符串类型；
+		//如果服务器传递回来的是JSON格式，
+		//需要自行转换，例如： var jsonBody = JSON.parse(message.body)
+		console.log(message)
 	})
 }, function(){
 	//连接失败的回调函数；
@@ -46,10 +48,15 @@ stompClient.connect({'Authorization': 'Bearer ' + this.token}, function(){
 })
 ```
 
+一般项目，需要连接由于网路等原因断开后自动重连，重连的方法可以写在stompClient的失败回调函数内（注意要判断是否主动断开的）。
+
 #### 发送消息
 
 ```javascript
-//发送消息有3个参数： 1、消息发送到的地址url；2、消息头信息，JSON格式； 3、消息正文，字符串，如果是json格式，需要自行转换
+// 发送消息有3个参数： 
+//  1、消息发送到的地址url；
+//  2、消息头信息，JSON格式； 
+//  3、消息正文，字符串，如果是json格式，需要自行转换
 stompClient.send(destination, {}, body);
 ```
 
