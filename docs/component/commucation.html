@@ -1,0 +1,946 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>通讯 · 前端工程化入门：VUE的实践</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="葛香东">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="slot.html" />
+    
+    
+    <link rel="prev" href="custom-event.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../engineering/">
+            
+                <a href="../engineering/">
+            
+                    
+                    前端工程化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../engineering/background.html">
+            
+                <a href="../engineering/background.html">
+            
+                    
+                    前端工程化的出现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../engineering/glossary.html">
+            
+                <a href="../engineering/glossary.html">
+            
+                    
+                    相关的工具、技术和术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../engineering/methodology.html">
+            
+                <a href="../engineering/methodology.html">
+            
+                    
+                    几个不同的实现方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../architecture/">
+            
+                <a href="../architecture/">
+            
+                    
+                    MV*架构模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../architecture/mvc.html">
+            
+                <a href="../architecture/mvc.html">
+            
+                    
+                    MVC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../architecture/mvp.html">
+            
+                <a href="../architecture/mvp.html">
+            
+                    
+                    MVP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../architecture/mvvm.html">
+            
+                <a href="../architecture/mvvm.html">
+            
+                    
+                    MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../start/">
+            
+                <a href="../start/">
+            
+                    
+                    开始一个VUE程序
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../start/devtools.html">
+            
+                <a href="../start/devtools.html">
+            
+                    
+                    开发环境的搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../start/helloproject.html">
+            
+                <a href="../start/helloproject.html">
+            
+                    
+                    创建一个Hello word
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../start/config.html">
+            
+                <a href="../start/config.html">
+            
+                    
+                    配置开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../structure/">
+            
+                <a href="../structure/">
+            
+                    
+                    VUE项目结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../structure/folders.html">
+            
+                <a href="../structure/folders.html">
+            
+                    
+                    项目目录结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../structure/glossary.html">
+            
+                <a href="../structure/glossary.html">
+            
+                    
+                    VUE中的术语和词汇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../view/">
+            
+                <a href="../view/">
+            
+                    
+                    View
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../view/vuefile.html">
+            
+                <a href="../view/vuefile.html">
+            
+                    
+                    .vue文件的结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../view/template-syntax.html">
+            
+                <a href="../view/template-syntax.html">
+            
+                    
+                    template的语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../view/watch-data.html">
+            
+                <a href="../view/watch-data.html">
+            
+                    
+                    对数据改变的监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../view/lifecycle.html">
+            
+                <a href="../view/lifecycle.html">
+            
+                    
+                    生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../view/events.html">
+            
+                <a href="../view/events.html">
+            
+                    
+                    事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../view/refs.html">
+            
+                <a href="../view/refs.html">
+            
+                    
+                    使用ref属性获取元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../form/">
+            
+                <a href="../form/">
+            
+                    
+                    表单
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../form/v-mode.html">
+            
+                <a href="../form/v-mode.html">
+            
+                    
+                    v-model的双向绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../form/example.html">
+            
+                <a href="../form/example.html">
+            
+                    
+                    一个完整的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../form/file-object.html">
+            
+                <a href="../form/file-object.html">
+            
+                    
+                    使用File Object处理文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../router/">
+            
+                <a href="../router/">
+            
+                    
+                    路由与导航
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../router/vue-router.html">
+            
+                <a href="../router/vue-router.html">
+            
+                    
+                    vue-router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../router/navigate.html">
+            
+                <a href="../router/navigate.html">
+            
+                    
+                    导航
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../router/guards.html">
+            
+                <a href="../router/guards.html">
+            
+                    
+                    监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../ajax/">
+            
+                <a href="../ajax/">
+            
+                    
+                    AJAX
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../ajax/vue-resource.html">
+            
+                <a href="../ajax/vue-resource.html">
+            
+                    
+                    使用vue-resource
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../ajax/interceptor.html">
+            
+                <a href="../ajax/interceptor.html">
+            
+                    
+                    全局配置和监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../ajax/fileupload.html">
+            
+                <a href="../ajax/fileupload.html">
+            
+                    
+                    文件上传
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    自定义组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="create.html">
+            
+                <a href="create.html">
+            
+                    
+                    创建自定义组件并使用它
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="props.html">
+            
+                <a href="props.html">
+            
+                    
+                    通过属性向组件传递数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="custom-event.html">
+            
+                <a href="custom-event.html">
+            
+                    
+                    自定义事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10.4" data-path="commucation.html">
+            
+                <a href="commucation.html">
+            
+                    
+                    通讯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="slot.html">
+            
+                <a href="slot.html">
+            
+                    
+                    在组件内留出块界面空间给父元素用--插槽
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../global/">
+            
+                <a href="../global/">
+            
+                    
+                    全局变量与函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../global/prototype.html">
+            
+                <a href="../global/prototype.html">
+            
+                    
+                    使用VUE.prototype
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../global/vuex.html">
+            
+                <a href="../global/vuex.html">
+            
+                    
+                    使用vuex
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../misc/">
+            
+                <a href="../misc/">
+            
+                    
+                    其他
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../misc/stomp.html">
+            
+                <a href="../misc/stomp.html">
+            
+                    
+                    websocket stomp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../misc/mode.html">
+            
+                <a href="../misc/mode.html">
+            
+                    
+                    使用mode对开发环境与生产环境的不同配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../misc/ui.html">
+            
+                <a href="../misc/ui.html">
+            
+                    
+                    UI资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >通讯</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7EC4;&#x4EF6;&#x548C;&#x7236;&#x7EA7;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x8BAF;">&#x7EC4;&#x4EF6;&#x548C;&#x7236;&#x7EA7;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x8BAF;</h1>
+<h2 id="&#x63A8;&#x8350;&#x7684;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;">&#x63A8;&#x8350;&#x7684;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;</h2>
+<p>&#x7EC4;&#x4EF6;&#x548C;&#x7236;&#x7EA7;&#xFF08;&#x4F7F;&#x7528;&#x7EC4;&#x4EF6;&#x7684;view&#x6216;component&#xFF09;&#x901A;&#x8BAF;&#x4E00;&#x822C;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;3&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li>&#x7236;&#x7EA7; -&gt; &#x7EC4;&#x4EF6;&#xFF0C; &#x8BBE;&#x7F6E;&#x5C5E;&#x6027;&#xFF0C;&#x7EC4;&#x4EF6;&#x901A;&#x8FC7;props&#x63A5;&#x6536;</li>
+<li>&#x7EC4;&#x4EF6; -&gt; &#x7236;&#x7EA7;&#xFF0C; &#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#x4F20;&#x9012;&#x6D88;&#x606F;&#xFF1B;&#x7236;&#x7EA7;&#x76D1;&#x542C;&#x4E8B;&#x4EF6;&#x63A5;&#x6536;</li>
+<li>&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x6570;&#x636E; v-model </li>
+</ul>
+<h2 id="v-model">v-model</h2>
+<p>&#x8981;&#x4F7F;&#x7528;v-model&#xFF0C;&#x7EC4;&#x4EF6;&#x9700;&#x8981;&#x505A;&#x5230;2&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x7EC4;&#x4EF6;&#x6709;&#x4E00;&#x4E2A;prop&#x7684;&#x540D;&#x5B57;&#x662F;value </li>
+<li>value&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x901A;&#x8FC7;&#x89E6;&#x53D1;input&#x4E8B;&#x4EF6;&#x5411;&#x7236;&#x7EA7;&#x4F20;&#x9012;&#x65B0;&#x503C;</li>
+</ul>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<h3 id="&#x7EC4;&#x4EF6;">&#x7EC4;&#x4EF6;</h3>
+<p>&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;2&#x4E2A;&#x5C5E;&#x6027;&#xFF1A;message&#x548C;value&#xFF0C;&#x8C03;&#x7528;&#x65B9;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;v-model&#x7ED1;&#x5B9A;&#x6570;&#x636E;&#x5230;value&#x5C5E;&#x6027;&#x4E0A;&#x3002; </p>
+<pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;p&gt;{{message}}&lt;/p&gt;
+    &lt;button v-on:click=&quot;add(-1)&quot;&gt; - &lt;/button&gt; {{value}} &lt;button v-on:click=&quot;add(+1)&quot;&gt; + &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  props: [&apos;value&apos;, &apos;message&apos;],
+  methods: {
+    add(step){
+      this.value += step;
+      this.$emit(&apos;input&apos;, this.value)
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre><h3 id="&#x8C03;&#x7528;&#x65B9;">&#x8C03;&#x7528;&#x65B9;</h3>
+<pre><code>&lt;MyComponent message=&quot;Hello&quot; v-model=&quot;num&quot;/&gt;
+</code></pre><h2 id="&#x5728;&#x7236;&#x7EA7;&#x8C03;&#x7528;&#x7EC4;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#x3010;&#x4E0D;&#x63A8;&#x8350;&#x3011;">&#x5728;&#x7236;&#x7EA7;&#x8C03;&#x7528;&#x7EC4;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#x3010;&#x4E0D;&#x63A8;&#x8350;&#x3011;</h2>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<a href="../misc/refs.md">refs</a>&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x5F97;&#x5230;&#x7EC4;&#x4EF6;&#x7684;&#x8282;&#x70B9;&#x3002; &#x628A;ref&#x589E;&#x52A0;&#x5230;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;&#x7684;compoennt&#x4E0A;&#xFF0C;&#x83B7;&#x53D6;&#x5230;&#x7684;&apos;this.$refs.xxx&apos;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x5C31;&#x662F;&#x6574;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x5143;&#x7D20;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x8C03;&#x7528;&#x8C03;&#x7528;&#x81EA;&#x5B9A;&#x4E49;component&#x7684;methods&#x91CC;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x7236;&#x7EA7;&#x4FB5;&#x5165;&#x5230;&#x4E86;&#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x4EE3;&#x7801;&#xFF0C;<strong>&#x8026;&#x5408;&#x6027;&#x5F88;&#x9AD8;</strong>&#xFF0C;&#x56E0;&#x6B64;<strong>&#x4E0D;&#x5EFA;&#x8BAE;</strong>&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x548C;&#x5B50;&#x63A7;&#x4EF6;&#x901A;&#x8BAF;&#xFF0C;&#x5982;&#x679C;&#x80FD;&#x7528;v-model, props, &#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#x7B49;&#x65B9;&#x5F0F;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;&#x4E0D;&#x8981;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x901A;&#x8BAF;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="custom-event.html" class="navigation navigation-prev " aria-label="Previous page: 自定义事件">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="slot.html" class="navigation navigation-next " aria-label="Next page: 在组件内留出块界面空间给父元素用--插槽">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"通讯","level":"1.10.4","depth":2,"next":{"title":"在组件内留出块界面空间给父元素用--插槽","level":"1.10.5","depth":2,"path":"component/slot.md","ref":"component/slot.md","articles":[]},"previous":{"title":"自定义事件","level":"1.10.3","depth":2,"path":"component/custom-event.md","ref":"component/custom-event.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"葛香东","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"b5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端工程化入门：VUE的实践","language":"zh","gitbook":"*"},"file":{"path":"component/commucation.md","mtime":"2018-12-01T11:17:08.036Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-12T04:12:05.542Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
