@@ -7,11 +7,10 @@
 首先在命令行下面进入到你希望工程所在的目录（不用手工创建工程目录，下面的命令会自动创建）。之后执行命令：
 
 ```bash
-vue create 'project-name'
+vue create project-name
 ```
 之后会出现2个选项，是使用默认的，还是手工选择功能，我们来看看Manually select features里有哪些功能：
 
-TODO
 
 - [x] Babel
 - [ ] TypeScript
