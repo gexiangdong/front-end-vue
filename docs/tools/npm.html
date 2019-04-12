@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>MVVM · 前端工程化入门：VUE的实践</title>
+        <title>NPM · 前端工程化入门：VUE的实践</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../start/" />
     
-    
-    <link rel="prev" href="mvp.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -160,9 +158,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="./">
+        <li class="chapter " data-level="1.3" data-path="../architecture/">
             
-                <a href="./">
+                <a href="../architecture/">
             
                     
                     MV*架构模型
@@ -174,9 +172,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="mvc.html">
+        <li class="chapter " data-level="1.3.1" data-path="../architecture/mvc.html">
             
-                <a href="mvc.html">
+                <a href="../architecture/mvc.html">
             
                     
                     MVC
@@ -187,9 +185,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="mvp.html">
+        <li class="chapter " data-level="1.3.2" data-path="../architecture/mvp.html">
             
-                <a href="mvp.html">
+                <a href="../architecture/mvp.html">
             
                     
                     MVP
@@ -200,9 +198,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.3" data-path="mvvm.html">
+        <li class="chapter " data-level="1.3.3" data-path="../architecture/mvvm.html">
             
-                <a href="mvvm.html">
+                <a href="../architecture/mvvm.html">
             
                     
                     MVVM
@@ -779,9 +777,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.13" data-path="../tools/">
+        <li class="chapter " data-level="1.13" data-path="./">
             
-                <a href="../tools/">
+                <a href="./">
             
                     
                     NPM, Webpack等
@@ -793,9 +791,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.13.1" data-path="../tools/npm.html">
+        <li class="chapter active" data-level="1.13.1" data-path="npm.html">
             
-                <a href="../tools/npm.html">
+                <a href="npm.html">
             
                     
                     NPM
@@ -854,7 +852,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >MVVM</a>
+        <a href=".." >NPM</a>
     </h1>
 </div>
 
@@ -869,11 +867,51 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="mvvm">MVVM</h1>
-<p>MVVM (Model-View-ViewModel)&#x662F;&#x7531;&#x5FAE;&#x8F6F;&#x67B6;&#x6784;&#x5E08;&#x63D0;&#x51FA;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5E76;&#x4E0E;2005&#x9996;&#x6B21;&#x53D1;&#x8868;&#x3002;&#x5728;MVVM&#x4E2D;&#xFF0C;View&#x548C;Model&#x7684;&#x540C;&#x6B65;&#x903B;&#x8F91;&#x4F1A;&#x4EA4;&#x7531;&#x6846;&#x67B6;&#x81EA;&#x52A8;&#x5904;&#x7406;&#xFF0C;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x624B;&#x5DE5;&#x7F16;&#x5199;&#x4EE3;&#x7801;&#x3002;&#x9664;&#x7528;ViewModel&#x53D6;&#x4EE3;&#x4E86;Presenter&#x5916;&#xFF0C;&#x5176;&#x5B83;&#x548C;MVP&#x57FA;&#x672C;&#x76F8;&#x540C;&#x3002;View&#x548C;ViewModel&#x4E4B;&#x95F4;&#x91C7;&#x7528;&#x53CC;&#x5411;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#xFF0C;model&#x4E2D;&#x6570;&#x636E;&#x53D8;&#x5316;&#x4E86;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x5728;view&#x4E2D;&#x5448;&#x73B0;&#xFF0C;&#x53CD;&#x4E4B;&#x4EA6;&#x7136;&#x3002;</p>
-<p><img src="../images/mvvm.png" alt="MVVM"></p>
-<p>VUE&#x91CC;&#x5C31;&#x662F;&#x7528;&#x7684;MVVM&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;&#x6269;&#x5C55;&#x540D;&#x662F;.vue&#x7684;&#x89C6;&#x56FE;&#x5185;&#xFF0C;template&#x90E8;&#x5206;&#x662F;MVVM&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;V(View)&#xFF0C;script&#x90E8;&#x5206;&#x4E2D;&#x7684;data()&#x5219;&#x5BF9;&#x5E94;MVVM&#x4E2D;&#x7684;M(Model)&#xFF0C;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x7684;script&#x5219;&#x5BF9;&#x5E94;VM(ViewModel)&#x3002;&#x5982;&#x679C;&#x8981;&#x7ED9;style&#x5206;&#x5E03;&#x4E5F;&#x5F52;&#x7C7B;&#xFF0C;&#x53EF;&#x653E;&#x5230;View&#x90E8;&#x5206;&#x3002;</p>
-
+                                <h1 id="npm">NPM</h1>
+<p>&#x5728;<a href="../start/devtools.html">&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x642D;&#x5EFA;</a>&#x7AE0;&#x8282;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x597D;npm&#x4E86;&#x3002;</p>
+<p>npm&#x7684;&#x5168;&#x79F0;&#x662F; Node Package Manager&#xFF08;Node&#x7684;&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF09;&#xFF0C;NodeJS&#x5F00;&#x53D1;&#xFF0C;&#x65E0;&#x8BBA;&#x524D;&#x7AEF;&#x8FD8;&#x662F;&#x540E;&#x7AEF;&#x90FD;&#x53EF;&#x4EE5;&#x7528;NPM&#x6765;&#x7BA1;&#x7406;&#x5305;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x4E86;&#x89E3;maven&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;npm&#x548C;maven&#x6709;&#x7C7B;&#x4F3C;&#x4E4B;&#x5904;&#xFF0C;&#x90FD;&#x662F;&#x505A;&#x5305;&#x7BA1;&#x7406;&#x3002;npm&#x4E5F;&#x6709;&#x201C;&#x4ED3;&#x5E93;&#x201D;&#xFF0C;&#x53EB;&#x505A;registry&#xFF0C;&#x6211;&#x4EEC;&#x7528; <code>npm install xxx</code> &#x5B89;&#x88C5;&#x7684;xxx&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5305;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x4ECE;registry&#x4E0A;&#x4E0B;&#x8F7D;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x56E2;&#x961F;&#x5F00;&#x53D1;&#xFF0C;&#x516C;&#x53F8;&#x5185;&#x4E5F;&#x53EF;&#x4EE5;&#x505A;&#x81EA;&#x5DF1;&#x7684;npm&#x79C1;&#x670D;&#xFF0C;&#x53EF;&#x4EE5;&#x7528; <a href="https://www.sonatype.com/nexus-repository-sonatype" target="_blank">nexus</a> &#x6765;&#x505A;npm&#x7684;&#x79C1;&#x670D;&#x3002;</p>
+<h2 id="&#x7528;npm&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x9879;&#x76EE;">&#x7528;npm&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x9879;&#x76EE;</h2>
+<p>&#x9996;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x8FDB;&#x5165;&#x76EE;&#x5F55;&#x540E;&#x540E;&#xFF0C;&#x6267;&#x884C; <code>npm init</code>&#x5373;&#x53EF;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x9879;&#x76EE;&#x3002;</p>
+<pre><code class="lang-bash">mkdir newproject
+<span class="hljs-built_in">cd</span> newproject
+npm init
+</code></pre>
+<p>&#x8FD0;&#x884C; <code>npm init</code> &#x4F1A;&#x8BE2;&#x95EE;&#x4E00;&#x4E9B;&#x9879;&#x76EE;&#x7684;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#xFF0C;&#x56DE;&#x7B54;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x76EE;&#x5F55;&#x4E0B;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; package.json &#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4FDD;&#x5B58;&#x4E86;&#x9879;&#x76EE;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x9879;&#x76EE;&#x4F9D;&#x8D56;&#x7684;&#x5305;&#x7B49;&#x3002;</p>
+<p>&#x521B;&#x5EFA;&#x597D;&#x9879;&#x76EE;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>npm install xxx</code>&#x547D;&#x4EE4;&#x6765;&#x7ED9;&#x9879;&#x76EE;&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;&#x7684;&#x5305;&#x3002;  npm install&#x547D;&#x4EE4;&#x4F1A;&#x4ECE;&#x7F51;&#x4E0A;&#x4E0B;&#x8F7D;&#x5BF9;&#x5E94;&#x7684;&#x5305;&#xFF0C;&#x5E76;&#x4FDD;&#x5B58;&#x5230; node_modules&#x76EE;&#x5F55;&#x5185;&#x3002;</p>
+<p>npm install &#x53EF;&#x4EE5;&#x589E;&#x52A0; --save &#x6216; --save-dev&#x53C2;&#x6570;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">--save</td>
+<td style="text-align:left">&#x4FDD;&#x5B58;&#x6B64;&#x5305;&#x5230; package.json &#xFF1B;&#x9879;&#x76EE;&#x4EE3;&#x7801;&#x4E2D;&#x4F9D;&#x8D56;&#x6B64;&#x5305;&#xFF0C;&#x751F;&#x6210;&#x73AF;&#x5883;&#x8FD0;&#x884C;&#x65F6;&#x9700;&#x8981;&#xFF0C;&#x5E94;&#x8BE5;&#x589E;&#x52A0;&#x6B64;&#x53C2;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">--save-dev</td>
+<td style="text-align:left">&#x4FDD;&#x5B58;&#x6B64;&#x5305;&#x5230; package.json&#xFF0C;&#x4F46;&#x4E0D;&#x4F1A;&#x5728;&#x6700;&#x7EC8;&#x53D1;&#x5E03;&#x65F6;&#x5305;&#x542B;&#x6B64;&#x5305;&#xFF0C;&#x8FD1;&#x8FDB;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x9700;&#x8981;&#xFF0C;&#x4F8B;&#x5982;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;&#x683C;&#x5F0F;&#x68C0;&#x67E5;&#x3001;&#x4EE3;&#x7801;&#x7248;&#x672C;&#x8F6C;&#x6362;&#x3001;&#x6253;&#x5305;&#x5DE5;&#x5177;&#x7B49;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="npm-install">npm install</h3>
+<p>&#x4EC5;&#x4EC5;&#x8FD0;&#x884C; <code>npm install</code> &#x4E0D;&#x5E26;&#x4EFB;&#x4F55;&#x53C2;&#x6570;&#xFF0C;&#x5219;&#x662F;&#x6839;&#x636E;package.json&#x91CC;&#x7684;&#x8BBE;&#x7F6E;&#x5B89;&#x88C5;&#x6240;&#x6709;&#x7684;&#x6A21;&#x5757;&#x3002;</p>
+<h2 id="package-lockjson">package-lock.json</h2>
+<p>&#x8FD0;&#x884C;npm install &#x540E;&#x4F1A;&#x53D1;&#x73B0;&#x76EE;&#x5F55;&#x4E0B;&#x591A;&#x4E86;&#x4E2A; package-lock.json&#x3002;</p>
+<p>package.json&#x91CC;&#x5B9A;&#x4E49;&#x7684;&#x7248;&#x672C;&#x53F7;&#x662F;&#x4E00;&#x4E2A;&#x8303;&#x56F4;&#xFF0C;&#x4F8B;&#x5982; ^4.0.0&#xFF0C;&#x8868;&#x793A;4.0.0&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x7686;&#x53EF;&#xFF0C;<code>npm install</code> &#x540E;&#x4F1A;&#x6839;&#x636E;package.json&#x4E2D;&#x6240;&#x6709;&#x7684;&#x4F9D;&#x8D56;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x6765;&#x51B3;&#x5B9A;&#x67D0;&#x4E2A;&#x4F9D;&#x8D56;&#x5177;&#x4F53;&#x5B89;&#x88C5;&#x54EA;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x800C;&#x786E;&#x5B9A;&#x597D;&#x540E;&#x5C31;&#x628A;&#x7248;&#x672C;&#x5199;&#x5728;&#x4E86; package-lock.json&#x5185;&#x3002;</p>
+<h2 id="&#x5B89;&#x88C5;&#x7279;&#x5B9A;&#x7684;&#x7248;&#x672C;">&#x5B89;&#x88C5;&#x7279;&#x5B9A;&#x7684;&#x7248;&#x672C;</h2>
+<p>&#x53EA;&#x8981;&#x5728;&#x5305;&#x540D;&#x79F0;&#x540E;&#x589E;&#x52A0; @&#x7248;&#x672C;&#x53F7; &#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C; &#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; @latest &#x6765;&#x8868;&#x793A;&#x6700;&#x65B0;&#x7248;</p>
+<pre><code class="lang-bash">npm install xxx@3.2.0
+npm install xxx@latest
+</code></pre>
+<h2 id="&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x5305;">&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x5305;</h2>
+<pre><code>npm uninstall xxx --save
+</code></pre>
                                 
                                 </section>
                             
@@ -900,14 +938,10 @@
 
             
                 
-                <a href="mvp.html" class="navigation navigation-prev " aria-label="Previous page: MVP">
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: NPM, Webpack等">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../start/" class="navigation navigation-next " aria-label="Next page: 开始一个VUE程序">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -916,7 +950,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MVVM","level":"1.3.3","depth":2,"next":{"title":"开始一个VUE程序","level":"1.4","depth":1,"path":"start/README.md","ref":"start/README.md","articles":[{"title":"开发环境的搭建","level":"1.4.1","depth":2,"path":"start/devtools.md","ref":"start/devtools.md","articles":[]},{"title":"创建一个Hello word","level":"1.4.2","depth":2,"path":"start/helloproject.md","ref":"start/helloproject.md","articles":[]},{"title":"配置开发环境","level":"1.4.3","depth":2,"path":"start/config.md","ref":"start/config.md","articles":[]}]},"previous":{"title":"MVP","level":"1.3.2","depth":2,"path":"architecture/mvp.md","ref":"architecture/mvp.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"葛香东","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"b5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端工程化入门：VUE的实践","language":"zh","gitbook":"*"},"file":{"path":"architecture/mvvm.md","mtime":"2018-12-01T11:17:09.034Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-12T12:58:51.136Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"NPM","level":"1.13.1","depth":2,"next":{"title":"[webpack] (tools/webpack.md)","level":"1.13.2","depth":2,"ref":"","articles":[]},"previous":{"title":"NPM, Webpack等","level":"1.13","depth":1,"path":"tools/README.md","ref":"tools/README.md","articles":[{"title":"NPM","level":"1.13.1","depth":2,"path":"tools/npm.md","ref":"tools/npm.md","articles":[]},{"title":"[webpack] (tools/webpack.md)","level":"1.13.2","depth":2,"ref":"","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"葛香东","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"b5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端工程化入门：VUE的实践","language":"zh","gitbook":"*"},"file":{"path":"tools/npm.md","mtime":"2019-01-13T08:27:12.747Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-12T12:58:51.136Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

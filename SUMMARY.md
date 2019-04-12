@@ -48,3 +48,7 @@
   * [websocket stomp](misc/stomp.md)
   * [使用mode对开发环境与生产环境的不同配置](misc/mode.md)
   * [UI资源](misc/ui.md)
+* [NPM, Webpack等](tools/README.md)
+ * [NPM](tools/npm.md)
+ * [webpack] (tools/webpack.md)
+ 
