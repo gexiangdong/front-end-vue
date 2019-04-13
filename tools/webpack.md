@@ -40,10 +40,10 @@ mkdir app
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
 <title>hello webapck</title>
 </head>
 <body>
-
 </body>
 </html>
 ```
@@ -52,8 +52,9 @@ mkdir app
 
 ```javascript
 function sampleMethod(){
-  var element = document.createElement('h2');
-  element.innerHTML = "h2 from sample method";
+  var element = document.createElement('div');
+  element.innerHTML = "element created from sample method";
+  element.style.border = "1px solid gray";
   return element;
 }
 module.exports = sampleMethod;
@@ -81,17 +82,15 @@ var HtmlwebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   //项目的文件夹 可以直接用文件夹名称 默认即index.js 
   entry: __dirname + "/app/index.js",
-  //输出的文件名 合并以后的js会命名为bundle.js
+  //输出的文件名 合并以后的js会命名为main.js
   output: {
     path: __dirname + "/build",
-    filename: "bundle.js"
+    filename: "main.js"
   },
 
-  //添加我们的插件会自动生成一个html文件
   plugins: [
     new HtmlwebpackPlugin({
-       template: __dirname + "/app/index.html"//html模版地址
-
+       template: __dirname + "/app/index.html" //html模版地址
      })
   ],
 
