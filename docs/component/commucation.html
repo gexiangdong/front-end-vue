@@ -881,7 +881,7 @@
 <p>&#x8981;&#x4F7F;&#x7528;v-model&#xFF0C;&#x7EC4;&#x4EF6;&#x9700;&#x8981;&#x505A;&#x5230;2&#x70B9;&#xFF1A;</p>
 <ul>
 <li>&#x7EC4;&#x4EF6;&#x6709;&#x4E00;&#x4E2A;prop&#x7684;&#x540D;&#x5B57;&#x662F;value </li>
-<li>value&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x901A;&#x8FC7;&#x89E6;&#x53D1;input&#x4E8B;&#x4EF6;&#x5411;&#x7236;&#x7EA7;&#x4F20;&#x9012;&#x65B0;&#x503C;</li>
+<li>value&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x901A;&#x8FC7;&#x89E6;&#x53D1;update&#x4E8B;&#x4EF6;(&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x5176;&#x5B83;&#x540D;&#x5B57;)&#x5411;&#x7236;&#x7EA7;&#x4F20;&#x9012;&#x65B0;&#x503C;&#xFF0C;&#x7EC4;&#x4EF6;&#x8C03;&#x7528;&#x8005;&#x63A5;&#x6536;update&#x4E8B;&#x4EF6;&#x5E76;&#x6539;&#x53D8;&#x76F8;&#x5E94;&#x7684;&#x503C;</li>
 </ul>
 <p>&#x4F8B;&#x5982;&#xFF1A;</p>
 <h3 id="&#x7EC4;&#x4EF6;">&#x7EC4;&#x4EF6;</h3>
@@ -898,14 +898,16 @@ export default {
   props: [&apos;value&apos;, &apos;message&apos;],
   methods: {
     add(step){
-      this.value += step;
-      this.$emit(&apos;input&apos;, this.value)
+      var newVal = this.value + step;
+      this.$emit(&apos;update&apos;, {value: newVal})
     }
   }
 }
 &lt;/script&gt;
-</code></pre><h3 id="&#x8C03;&#x7528;&#x65B9;">&#x8C03;&#x7528;&#x65B9;</h3>
-<pre><code>&lt;MyComponent message=&quot;Hello&quot; v-model=&quot;num&quot;/&gt;
+</code></pre><p>&#x6CE8;&#x610F;&#xFF1A;&#x4E0D;&#x8981;&#x5728;&#x7EC4;&#x4EF6;&#x91CC;&#x76F4;&#x63A5;&#x6539;&#x53D8;&#x4F20;&#x5165;&#x5C5E;&#x6027;&#x7684;&#x503C;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x6709;&#x8B66;&#x544A;&#xFF1A;</p>
+<p>  [Vue warn]: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop&apos;s value. Prop being mutated: &quot;value&quot;</p>
+<h3 id="&#x8C03;&#x7528;&#x65B9;">&#x8C03;&#x7528;&#x65B9;</h3>
+<pre><code>&lt;MyComponent message=&quot;Hello&quot; v-model=&quot;num&quot; @update=&quot;num = $event.value&quot;/&gt;
 </code></pre><h2 id="&#x5728;&#x7236;&#x7EA7;&#x8C03;&#x7528;&#x7EC4;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#x3010;&#x4E0D;&#x63A8;&#x8350;&#x3011;">&#x5728;&#x7236;&#x7EA7;&#x8C03;&#x7528;&#x7EC4;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#x3010;&#x4E0D;&#x63A8;&#x8350;&#x3011;</h2>
 <p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<a href="../misc/refs.md">refs</a>&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x5F97;&#x5230;&#x7EC4;&#x4EF6;&#x7684;&#x8282;&#x70B9;&#x3002; &#x628A;ref&#x589E;&#x52A0;&#x5230;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;&#x7684;compoennt&#x4E0A;&#xFF0C;&#x83B7;&#x53D6;&#x5230;&#x7684;&apos;this.$refs.xxx&apos;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x5C31;&#x662F;&#x6574;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x5143;&#x7D20;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x8C03;&#x7528;&#x8C03;&#x7528;&#x81EA;&#x5B9A;&#x4E49;component&#x7684;methods&#x91CC;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
 <p>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x7236;&#x7EA7;&#x4FB5;&#x5165;&#x5230;&#x4E86;&#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x4EE3;&#x7801;&#xFF0C;<strong>&#x8026;&#x5408;&#x6027;&#x5F88;&#x9AD8;</strong>&#xFF0C;&#x56E0;&#x6B64;<strong>&#x4E0D;&#x5EFA;&#x8BAE;</strong>&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x548C;&#x5B50;&#x63A7;&#x4EF6;&#x901A;&#x8BAF;&#xFF0C;&#x5982;&#x679C;&#x80FD;&#x7528;v-model, props, &#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#x7B49;&#x65B9;&#x5F0F;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;&#x4E0D;&#x8981;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x901A;&#x8BAF;&#x3002;</p>
@@ -952,7 +954,7 @@ export default {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"通讯","level":"1.10.4","depth":2,"next":{"title":"在组件内留出块界面空间给父元素用--插槽","level":"1.10.5","depth":2,"path":"component/slot.md","ref":"component/slot.md","articles":[]},"previous":{"title":"自定义事件","level":"1.10.3","depth":2,"path":"component/custom-event.md","ref":"component/custom-event.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"葛香东","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"b5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端工程化入门：VUE的实践","language":"zh","gitbook":"*"},"file":{"path":"component/commucation.md","mtime":"2018-12-01T11:17:08.036Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-13T00:45:08.174Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"通讯","level":"1.10.4","depth":2,"next":{"title":"在组件内留出块界面空间给父元素用--插槽","level":"1.10.5","depth":2,"path":"component/slot.md","ref":"component/slot.md","articles":[]},"previous":{"title":"自定义事件","level":"1.10.3","depth":2,"path":"component/custom-event.md","ref":"component/custom-event.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"葛香东","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Arial","paperSize":"b5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端工程化入门：VUE的实践","language":"zh","gitbook":"*"},"file":{"path":"component/commucation.md","mtime":"2020-02-10T02:12:57.149Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-11T08:21:14.548Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

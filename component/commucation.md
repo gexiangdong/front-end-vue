@@ -14,7 +14,7 @@
 要使用v-model，组件需要做到2点：
 
 * 组件有一个prop的名字是value 
-* value对应的值改变时，通过触发input事件向父级传递新值
+* value对应的值改变时，通过触发update事件(也可以是其它名字)向父级传递新值，组件调用者接收update事件并改变相应的值
 
 例如：
 
@@ -35,8 +35,8 @@ export default {
   props: ['value', 'message'],
   methods: {
     add(step){
-      this.value += step;
-      this.$emit('input', this.value)
+      var newVal = this.value + step;
+      this.$emit('update', {value: newVal})
     }
   }
 }
@@ -44,11 +44,19 @@ export default {
 
 ```
 
+注意：不要在组件里直接改变传入属性的值，否则会有警告：
+
+
+  [Vue warn]: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value. Prop being mutated: "value"
+
+
+
 ### 调用方
 
 ```
-<MyComponent message="Hello" v-model="num"/>
+<MyComponent message="Hello" v-model="num" @update="num = $event.value"/>
 ```
+
 
 ## 在父级调用组件的方法【不推荐】
 

@@ -81,7 +81,7 @@ export default {
 
 ```
 ## v-show
-v-show只是改变元素的style中的display属性，不论v-show的值为真货假，带有v-show的元素始终会被渲染并保留在DOM中。
+v-show只是改变元素的style中的display属性，不论v-show的值为真或假，带有v-show的元素始终会被渲染并保留在DOM中。
 
 ```
 <div v-show="var">
